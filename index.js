@@ -125,10 +125,54 @@ function promptUser() {
     });
 }
 
+const generateMarkdown = (answers) => {
+    return `# ${answers.title}
+    
+    ![GitHub license](https://img.shields.io/badge/license-${answers.license}-blue.svg)
+    
+    ## Description
+    
+    ${answers.description}
+    
+    ## Table of Contents
+    
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [License](#license)
+    * [Contribution Guidelines](#contribution-guidelines)
+    * [Test Instructions](#test-instructions)
+    * [Questions](#questions)
+    
+    ## Installation
+    
+    ${answers.installation}
+    
+    ## Usage
+    
+    ${answers.usage}
+    
+    ## License
+    
+    This project is licensed under the ${answers.license} license.
+    
+    ## Contribution Guidelines
+    
+    ${answers.contribution}
+    
+    ## Test Instructions
+    
+    ${answers.test}
+    
+    ## Questions
+    
+    If you have any questions about the repo, open an issue or contact me directly at ${answers.email}. You can find more of my work at [${answers.github}](github.com/${answers.github}/).`;
+}
+
 function init() {
     promptUser()
     .then(answers => {
-        console.log(answers);
+        const markdown = generateMarkdown(answers);
+        console.log(markdown);
     })
 }
 
