@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 
 function promptUser() {
     return new Promise((resolve, reject) => {
@@ -169,11 +170,26 @@ const generateMarkdown = (answers) => {
 }
 
 function init() {
-    promptUser()
-    .then(answers => {
-        const markdown = generateMarkdown(answers);
-        console.log(markdown);
-    })
+    try {
+        // Prompt user for information about their project
+        promptUser()
+        .then(answers => {
+            const markdown = generateMarkdown(answers);
+            fs.writeFile('./output/README.md', markdown, (err) => {
+                if (err) throw err;
+                console.log('The file has been saved!');
+            });
+        })
+        .then(() => {
+            console.log('Successfully generated README.md!');
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
+    catch(error) {
+        console.error(error);
+    }
 }
 
 init();
