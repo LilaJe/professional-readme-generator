@@ -18,7 +18,7 @@ function promptUser() {
                 }
             },
             {
-                type: 'input',
+                type: 'editor',
                 name: 'description',
                 message: 'Enter your project description:',
                 validate: descriptionInput => {
@@ -31,7 +31,7 @@ function promptUser() {
                 }
             },
             {
-                type: 'input',
+                type: 'editor',
                 name: 'installation',
                 message: 'Enter your project installation instructions:',
                 validate: installationInput => {
@@ -44,7 +44,7 @@ function promptUser() {
                 }
             },
             {
-                type: 'input',
+                type: 'editor',
                 name: 'usage',
                 message: 'Enter your project usage information:',
                 validate: usageInput => {
@@ -57,7 +57,7 @@ function promptUser() {
                 }
             },
             {
-                type: 'input',
+                type: 'editor',
                 name: 'contribution',
                 message: 'Enter your project contribution guidelines:',
                 validate: contributionInput => {
@@ -70,7 +70,7 @@ function promptUser() {
                 }
             },
             {
-                type: 'input',
+                type: 'editor',
                 name: 'test',
                 message: 'Enter your project test instructions:',
                 validate: testInput => {
@@ -129,44 +129,44 @@ function promptUser() {
 const generateMarkdown = (answers) => {
     return `# ${answers.title}
     
-    ![GitHub license](https://img.shields.io/badge/license-${answers.license}-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-${answers.license}-blue.svg)
     
-    ## Description
+## Description
     
-    ${answers.description}
+${answers.description}
     
-    ## Table of Contents
+## Table of Contents
     
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contribution Guidelines](#contribution-guidelines)
-    * [Test Instructions](#test-instructions)
-    * [Questions](#questions)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contribution Guidelines](#contribution-guidelines)
+* [Test Instructions](#test-instructions)
+* [Questions](#questions)
     
-    ## Installation
+## Installation
     
-    ${answers.installation}
+${answers.installation}
     
-    ## Usage
+## Usage
     
-    ${answers.usage}
+${answers.usage}
     
-    ## License
+## License
     
-    This project is licensed under the ${answers.license} license.
+This project is licensed under the ${answers.license} license.
     
-    ## Contribution Guidelines
+## Contribution Guidelines
     
-    ${answers.contribution}
+${answers.contribution}
     
-    ## Test Instructions
+## Test Instructions
     
-    ${answers.test}
+${answers.test}
     
-    ## Questions
+## Questions
     
-    If you have any questions about the repo, open an issue or contact me directly at ${answers.email}. You can find more of my work at [${answers.github}](github.com/${answers.github}/).`;
+If you have any questions about the repo, open an issue or contact me directly at ${answers.email}. You can find more of my work at [${answers.github}](github.com/${answers.github}/).`;
 }
 
 function init() {
