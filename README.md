@@ -1,6 +1,9 @@
 # Professional ReadMe Generator
     
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+
+## Submission video
+[Screen Recording](https://drive.google.com/file/d/1b6C3LxNanQqfyAwVs3Y3tRseN2pJcQuE/view?usp=sharing)
     
 ## Description
     
